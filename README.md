@@ -16,7 +16,7 @@
 POOL project is a mobile application that aims to help the survivors of domestic violence. The main features of the app are: resources in forms of curated articles, videos & podcasts about intimate partner violence, finding shelters and hotlines. Signed up users can have additional access to emergency contact features. 
 
 ## Backend
-Implementation of backend can be found here https://github.com/no-domestic-violence/backend
+Implementation of backend can be found here https://github.com/techie-wrb/violenceNoMore.git
 
 ## Tech Stack
 - React Native with Expo
