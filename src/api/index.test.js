@@ -19,113 +19,98 @@ describe('appApiClient', () => {
   });
 
   it('should successfully fetch hotlines data by search param', async () => {
-    // given
-    const search = 'Berlin';
+    const search = 'Delhi';
     const response = [
       {
         _id: '5f9db611c7cc881787ba620e',
-        city: 'Berlin',
-        country: 'Germany',
+        city: 'Delhi',
+        country: 'India',
         organisation_name: "Nelson's Horsenettle",
-        phone: '+49 543 513 8358',
-        website: 'www.nelson.de',
-        description: 'Everyday, 24/7',
+        phone: '+91 9876543210',
+        website: 'https://nari.nic.in',
+        description: 'Available 24/7',
       },
       {
         _id: '5f9db611c7cc881787ba620a',
-        city: 'Berlin',
-        country: 'Germany',
+        city: 'Delhi',
+        country: 'India',
         organisation_name: 'Test name',
-        phone: '+49 543 510 8358',
-        website: 'www.test.de',
-        description: 'Everyday, 24/7',
+        phone: '+91 1122334455',
+        website: 'https://ncw.nic.in',
+        description: 'Available 24/7',
       },
       {
         _id: '5f9db611c7cc881787ba620b',
-        city: 'Berlin',
-        country: 'Germany',
+        city: 'Delhi',
+        country: 'India',
         organisation_name: 'Test name 2',
-        phone: '+49 543 514 8358',
-        website: 'www.test2.de',
-        description: 'Everyday, 24/7',
+        phone: '+91 9988776655',
+        website: 'https://wcd.nic.in',
+        description: 'Available 24/7',
       },
     ];
-    // when
     mockAppClient
       .onGet('/hotlines', { params: { searchTerm: search } })
       .reply(200, response);
     const hotlines = await appApiClient.getHotlinesData(search);
-    // then
     expect(hotlines.data).toEqual(response);
   });
 
   it('should successfully fetch shelters data', async () => {
-    // given
     const response = [
       {
-        place_name: 'Test name',
-        address: '10001, Berlin, TestStrasse, 1',
+        place_name: 'Safe Shelter',
+        address: '110001, Delhi, India Gate Road, 1',
         contact_person: 'Jon Snow',
-        phone: '+4900110000',
-        locs: [12.2343, 13.7898],
+        phone: '+91 1122334455',
+        locs: [77.2314, 28.6139],
       },
     ];
-    // when
     mockAppClient.onGet('/shelters').reply(200, {
       data: response,
     });
     const shelters = await appApiClient.getSheltersData();
-    // then
     expect(shelters.data.data).toEqual(response);
   });
 
   it('should successfully fetch articles data', async () => {
-    // given
     const response = [
       {
         title: 'Test title',
         author: 'Test User',
         text: 'Lorem ipsum',
         violence_type: ['emotional'],
-        url_to_image: '"https://www.google.com/',
-        // created_at: new Date(), TODO: fix handling dates
+        url_to_image: 'https://upload.wikimedia.org/example.jpg',
       },
     ];
-    // when
     mockAppClient.onGet('/articles').reply(200, {
       data: response,
     });
     const articles = await appApiClient.getArticlesData();
-    // then
     expect(articles.data.data).toEqual(response);
   });
 
   it('should successfully fetch articles data by id', async () => {
-    // given
     const response = [
       {
         title: 'Test title',
         author: 'Test User',
         text: 'Lorem ipsum',
         violence_type: ['emotional'],
-        url_to_image: '"https://www.google.com/',
-        // created_at: new Date(), TODO: fix handling dates
+        url_to_image: 'https://upload.wikimedia.org/example.jpg',
       },
     ];
     const id = '6062e6501e80a94test40522';
-    // when
     mockAppClient.onGet(`/articles/${id}`).reply(200, {
       data: response,
     });
     const article = await appApiClient.getArticleById(id);
-    // then
     expect(article.data.data).toEqual(response);
   });
 
   it('should successfully send user data on POST to /login endpoint', async () => {
     const email = 'test@test.com';
     const password = '12345678';
-    // given
     const user = {
       username: 'Celeste',
       email,
@@ -138,10 +123,8 @@ describe('appApiClient', () => {
       token: 'TestToken121212',
       user,
     };
-    // when
     mockAppClient.onPost('/login', { email, password }).reply(201, response);
     const actual = await appApiClient.loginUser(email, password);
-    // then
     expect(actual.data).toEqual(response);
   });
 
@@ -150,7 +133,6 @@ describe('appApiClient', () => {
     const password = '12345678';
     const username = 'celeste';
     const token = 'TestToken121212';
-    // given
     const user = {
       username,
       email,
@@ -162,18 +144,16 @@ describe('appApiClient', () => {
       token,
       user,
     };
-    // when
     mockAppClient
       .onPost('/signup', { email, password, username })
       .reply(201, response);
     const actual = await appApiClient.signupUser(email, password, username);
-    // then
     expect(actual.data).toEqual(response);
   });
+
   it('should successfully delete user on DELETE request to /deleteUser endpoint', async () => {
     const username = 'celeste';
     const email = 'test@test.com';
-    // given
     const user = {
       username,
       email,
@@ -184,12 +164,10 @@ describe('appApiClient', () => {
       message: 'User was deleted',
       user,
     };
-    // when
     mockAppClient
       .onDelete('/deleteUser', { params: { username } })
       .reply(200, response);
     const actual = await appApiClient.deleteUser(username);
-    // then
     expect(actual.data).toEqual(response);
   });
 
@@ -197,12 +175,9 @@ describe('appApiClient', () => {
     const email = 'test@test.com';
     const password = '12345678';
     const oldPassword = '87654321';
-
-    // given
     const response = {
       message: 'You updated the password',
     };
-    // when
     mockAppClient
       .onPost('/changePassword', { email, oldPassword, password })
       .reply(200, response);
@@ -211,12 +186,10 @@ describe('appApiClient', () => {
       oldPassword,
       password
     );
-    // then
     expect(actual.data).toEqual(response);
   });
 
   it('should successfully get sos contacts with username', async () => {
-    // given
     const username = 'celeste';
     const response = [
       {
@@ -227,28 +200,22 @@ describe('appApiClient', () => {
       },
     ];
     mockAppClient.onGet(`/users/${username}/contacts`).reply(200, response);
-    // when
     const actual = await appApiClient.getSosContacts(username);
-    // then
     expect(actual.data).toEqual(response);
   });
 
   it('should successfully delete a contact with username and contact id', async () => {
-    // given
     const username = 'celeste';
     const id = '2f213dsafdsfasdfdas34e';
     const response = [];
     mockAppClient
       .onDelete(`/users/${username}/contacts/${id}`)
       .reply(202, response);
-    // when
     const actual = await appApiClient.deleteSosContact(username, id);
-    // then
     expect(actual.data).toEqual(response);
   });
 
   it('should successfully add a contact', async () => {
-    // given
     const username = 'celeste';
     const data = {
       name: 'ciel',
@@ -264,14 +231,11 @@ describe('appApiClient', () => {
       },
     ];
     mockAppClient.onPatch(`/users/${username}/contacts/`).reply(201, response);
-    // when
     const actual = await appApiClient.addSosContact(username, data);
-    // then
     expect(actual.data).toEqual(response);
   });
 
   it('should successfully edit a contact', async () => {
-    // given
     const username = 'celeste';
     const id = '2f213dsafdsfasdfdas34e';
     const data = {
@@ -285,13 +249,10 @@ describe('appApiClient', () => {
       phone: '12341234134',
       message: 'help me',
     };
-
     mockAppClient
       .onPatch(`/users/${username}/contacts/${id}`)
       .reply(201, response);
-    // when
     const actual = await appApiClient.editSosContact(username, data, id);
-    // then
     expect(actual.data).toEqual(response);
   });
 });
