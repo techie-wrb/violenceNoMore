@@ -97,8 +97,6 @@ detox test --configuration ios.sim.release
 
 ```
 ---
-## Authors of the project:
+## Author of the project:
 
-- Soyoon Choi  
-- Irina Baeva
-- Behnaz Derakhshani 
+-Aman Bijarnia 
