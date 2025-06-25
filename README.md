@@ -6,6 +6,7 @@
 ## Table of contents
 
 - [Project Description](#project-description)
+- [Why This Project](#why-this-project)
 - [Backend](#backend)
 - [Tech Stack](#tech-stack)
 - [Application architecture diagram](#application-architecture-diagram)
@@ -14,6 +15,10 @@
 
 ## Project Description
 POOL project is a mobile application that aims to help the survivors of domestic violence. The main features of the app are: resources in forms of curated articles, videos & podcasts about intimate partner violence, finding shelters and hotlines. Signed up users can have additional access to emergency contact features. 
+
+## Why This Project
+In a country where we often say “ghar ki baat ghar mein rahe”, too many cries go unheard. I’ve seen this silence too closely — growing up, it wasn’t just a news headline, it was part of my home. This project is my way of breaking that silence using code.I wanted to build something that doesn't just sit pretty on a GitHub profile, but actually empowers — because safety shouldn’t be a privilege, it should be a default. Because if tech can track your food order to your doorstep, it can damn well help someone find safety when it matters most.
+
 
 ## Backend
 Implementation of backend can be found here https://github.com/techie-wrb/violenceNoMore.git
