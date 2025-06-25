@@ -12,7 +12,7 @@
       "android",
       "web"
     ],
-    "githubUrl": "https://github.com/no-domestic-violence/mobile-app",
+    "githubUrl": "https://github.com/techie-wrb/violenceNoMore.git",
     "splash": {
       "image": "src/assets/splash.png",
       "resizeMode": "contain",
