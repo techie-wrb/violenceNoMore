@@ -1,0 +1,29 @@
+{
+    "common": {
+        "login": "Log In",
+        "how-to-use" : "How to use",
+        "change-password" : "Change Password",
+        "change-language" : "Change Language",
+        "delete-account" : "Delete Account",
+        "logout" : "Log Out",
+        "hello_user" : "Hello, {{ username }}"
+    },
+
+    "TermsAndConditions" : {
+        "title": "TERMS AND CONDITIONS",
+        "button": "AGREE"
+    },
+    "Onboarding" : {
+        "emergency-title" : "EMERGENCY CONTACTS",
+        "emergency-subtitle": "Add three trusted contacts that you can reach out to at critical moments",
+        "map-title" : "LOCATE NEAREST SHELTERS",
+        "map-subtitle": "Find help anywhere you are",
+        "resources-title": "LEARN WITH OUR CURATED RESOURCES",
+        "resources-subtitle": "Be curious. Be open. Learn.",
+        "questions-title": "TEST YOUR KNOWLEDGE",
+        "questions-subtitle": "Find out where your knowledge stands with our questionnaire",
+        "button": "GET STARTED"
+    }
+
+
+}

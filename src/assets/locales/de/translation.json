@@ -1,0 +1,28 @@
+{
+    "common": {
+        "login" : "Anmelden",
+        "how-to-use" : "Wie man es benutzt",
+        "change-password" : "Passwort ändern",
+        "change-language" : "Sprache ändern",
+        "delete-account" : "Konto löschen",
+        "logout" : "Ausloggen",
+        "hello_user" : "Hallo, {{ username }}"
+    },
+    "TermsAndConditions" : {
+        "title": "GESCHÄFTSBEDINGUNGEN",
+        "button": "ZUSTIMMEN"
+    },
+
+    "Onboarding" : {
+        "emergency-title" : "NOTKONTAKTE",
+        "emergency-subtitle": "Füg drei vertrauenswürdige Kontakte hinzu, die Sie in kritischen Momenten erreichen können",
+        "map-title" : "FRAUENHAUS FINDEN",
+        "map-subtitle": "Hilfe finden, wo immer Sie sind",
+        "resources-title": "LERNEN SIE MIT UNSEREN KURIERTEN RESSOURCEN",
+        "resources-subtitle": "Sei neugierig. Sei offen. Lernen",
+        "questions-title": "TESTEN SIE IHR WISSEN",
+        "questions-subtitle": "Finden Sie mit unserem Fragebogen heraus, wo Ihr Wissen steht",
+        "button": "LOS!"
+    }
+    
+}

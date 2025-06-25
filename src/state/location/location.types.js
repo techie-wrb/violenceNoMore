@@ -1,0 +1,7 @@
+const types = {
+  UPDATE_LOCATION: 'UPDATE_LOCATION',
+  FETCH_SHELTERS: 'FETCH_SHELTERS',
+  SEARCH_HOTLINES: 'SEARCH_HOTLINES',
+};
+
+export default types;
